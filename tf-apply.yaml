@@ -1,0 +1,37 @@
+---
+- name: Create VMs
+  hosts: localhost
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  tasks:
+
+    - name: Terraform init
+      command: terraform init
+      args:
+        chdir: /home/kai/Projects/kube-cluster-local/terraform
+
+    - name: Destroy old VMs
+      command: terraform destroy -auto-approve 
+      args:
+        chdir: /home/kai/Projects/kube-cluster-local/terraform
+
+    - name: Terraform fmt
+      command: terraform fmt
+      args:
+        chdir: /home/kai/Projects/kube-cluster-local/terraform
+
+    - name: Terraform validate
+      command: terraform validate
+      args:
+        chdir: /home/kai/Projects/kube-cluster-local/terraform
+
+    - name: Terraform apply
+      command: terraform apply -auto-approve -lock-timeout=2m
+      args:
+        chdir: /home/kai/Projects/kube-cluster-local/terraform
+
+    - name: Wait for the VMs to complete building
+      pause:
+        seconds: 30

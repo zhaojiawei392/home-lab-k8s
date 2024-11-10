@@ -1,0 +1,27 @@
+---
+- name: Create VMs
+  hosts: localhost
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  tasks:
+    - name: Add HashiCorp GPG key
+      apt_key:
+        url: https://apt.releases.hashicorp.com/gpg
+        state: present
+
+    - name: Add HashiCorp repository to apt
+      apt_repository:
+        repo: "deb https://apt.releases.hashicorp.com {{ ansible_lsb.codename }} main"
+        state: present
+        filename: hashicorp
+
+    - name: Update apt package cache
+      apt:
+        update_cache: yes
+
+    - name: Install Terraform
+      apt:
+        name: terraform
+        state: present

@@ -1,0 +1,14 @@
+---
+- name: Deploy SSH keys to new hosts
+  remote_user: root
+  hosts: all
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+
+  tasks:
+    - name: Install authorized keys
+      authorized_key:
+        user: "<remote_user>"
+        state: present
+        key: "{{ lookup('file', '/home/kai/.ssh/id_ed25519.pub') }}"

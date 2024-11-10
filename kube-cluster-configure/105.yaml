@@ -1,0 +1,46 @@
+---
+- name: "105"
+  hosts: all
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  vars:
+    os: "linux"
+    arch: "amd64"
+    version: "v1.6.0"  # Replace with the desired version
+    download_url: "https://github.com/containernetworking/plugins/releases/download/{{ version }}/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz"
+    sha256sum_url: "https://github.com/containernetworking/plugins/releases/download/{{ version }}/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz.sha256"
+  tasks:
+    - name: Create directory for CNI plugins
+      file:
+        path: /opt/cni/bin
+        state: directory
+        mode: '0755'
+
+    - name: Download CNI plugins archive
+      get_url:
+        url: "{{ download_url }}"
+        dest: "/tmp/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz"
+
+    - name: Download sha256sum
+      get_url:
+        url: "{{ sha256sum_url }}"
+        dest: "/tmp/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz.sha256"
+
+    - name: Verify sha256sum
+      command: sha256sum -c /tmp/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz.sha256
+      args:
+        chdir: /tmp
+
+    - name: Extract CNI plugins archive
+      unarchive:
+        src: "/tmp/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz"
+        dest: /opt/cni/bin
+        remote_src: yes
+
+    - name: Cleanup temporary files
+      file:
+        path: "/tmp/cni-plugins-{{ os }}-{{ arch }}-{{ version }}.tgz*"
+        state: absent

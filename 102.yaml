@@ -1,0 +1,46 @@
+---
+- name: "102"
+  hosts: all
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  vars:
+    containerd_version: "2.0.0"
+    os: "linux"
+    arch: "amd64"
+    download_url: "https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz"
+    sha256sum_url: "https://github.com/containerd/containerd/releases/download/v{{ containerd_version }}/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz.sha256sum"
+
+  tasks:
+    - name: Ensure tar is installed
+      package:
+        name: tar
+        state: present
+
+    - name: Download containerd archive
+      get_url:
+        url: "{{ download_url }}"
+        dest: "/tmp/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz"
+
+    - name: Download sha256sum
+      get_url:
+        url: "{{ sha256sum_url }}"
+        dest: "/tmp/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz.sha256sum"
+
+    - name: Verify sha256sum
+      command: sha256sum -c /tmp/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz.sha256sum
+      args:
+        chdir: /tmp
+
+    - name: Extract containerd archive
+      unarchive:
+        src: "/tmp/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz"
+        dest: /usr/local
+        remote_src: yes
+
+    - name: Cleanup temporary files
+      file:
+        path: "/tmp/containerd-{{ containerd_version }}-{{ os }}-{{ arch }}.tar.gz*"
+        state: absent

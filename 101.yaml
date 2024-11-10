@@ -1,0 +1,56 @@
+---
+- name: "101"
+  hosts: all
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  tasks:
+  
+    - name: Uninstall old kubelet, kubeadm, and kubectl
+      yum:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: absent
+
+    - name: Add Kubernetes repository for YUM
+      copy:
+        dest: /etc/yum.repos.d/kubernetes.repo
+        content: |
+          [kubernetes]
+          name=Kubernetes
+          baseurl=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/
+          enabled=1
+          gpgcheck=1
+          gpgkey=https://pkgs.k8s.io/core:/stable:/v1.31/rpm/repodata/repomd.xml.key
+
+    - name: Update YUM cache
+      yum:
+        update_cache: yes
+
+    - name: Install kubelet, kubeadm, and kubectl
+      yum:
+        name:
+          - kubelet
+          - kubeadm
+          - kubectl
+        state: present
+
+    - name: Install yum-plugin-versionlock
+      yum:
+        name: yum-plugin-versionlock
+        state: present
+
+    - name: Lock Kubernetes package versions
+      command: "yum versionlock add kubelet kubeadm kubectl"
+      args:
+        creates: /etc/yum/pluginconf.d/versionlock.list
+
+    - name: Enable and start kubelet service
+      systemd:
+        name: kubelet
+        enabled: yes
+        state: started

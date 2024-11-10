@@ -1,0 +1,24 @@
+---
+- name: "108"
+  hosts: master1
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  tasks:  
+
+    - name: Download and Apply the Calico YAML Manifest
+      command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+
+
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+# kubectl get pods -n kubernetes-dashboard
+# kubectl create serviceaccount dashboard-sa -n kubernetes-dashboard
+# kubectl create clusterrolebinding dashboard-sa-binding \
+#   --clusterrole=cluster-admin \
+#   --serviceaccount=kubernetes-dashboard:dashboard-sa
+# kubectl -n kubernetes-dashboard create token dashboard-sa
+# kubectl proxy
+# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/

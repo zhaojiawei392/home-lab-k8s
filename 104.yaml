@@ -1,0 +1,37 @@
+---
+- name: "104"
+  hosts: all
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  vars:
+    runc_version: "v1.2.1"  # Replace with the desired version
+    arch: "amd64"           # Replace with your architecture (e.g., "arm64")
+    download_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.{{ arch }}"
+    sha256sum_url: "https://github.com/opencontainers/runc/releases/download/{{ runc_version }}/runc.sha256sum"
+  tasks:
+    - name: Download runc binary
+      get_url:
+        url: "{{ download_url }}"
+        dest: "/tmp/runc.{{ arch }}"
+        mode: '0755'
+
+    # - name: Download sha256sum
+    #   get_url:
+    #     url: "{{ sha256sum_url }}"
+    #     dest: "/tmp/runc.sha256sum"
+
+    # - name: Verify sha256sum
+    #   command: sha256sum -c /tmp/runc.sha256sum
+    #   args:
+    #     chdir: /tmp
+
+    - name: Install runc
+      command: install -m 755 /tmp/runc.{{ arch }} /usr/local/sbin/runc
+
+    - name: Cleanup temporary files
+      file:
+        path: "/tmp/runc.{{ arch }}*"
+        state: absent 

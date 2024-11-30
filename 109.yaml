@@ -9,16 +9,18 @@
   tasks:  
 
     - name: Download and Apply the Calico YAML Manifest
-      command: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+      shell: kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 
+    - name: Deploy dashboard
+      shell: |
+        kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+        kubectl get pods -n kubernetes-dashboard
+        kubectl create serviceaccount dashboard-sa -n kubernetes-dashboard
+        kubectl create clusterrolebinding dashboard-sa-binding --clusterrole=cluster-admin --serviceaccount=kubernetes-dashboard:dashboard-sa
 
-
-# kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
-# kubectl get pods -n kubernetes-dashboard
-# kubectl create serviceaccount dashboard-sa -n kubernetes-dashboard
-# kubectl create clusterrolebinding dashboard-sa-binding \
-#   --clusterrole=cluster-admin \
-#   --serviceaccount=kubernetes-dashboard:dashboard-sa
 # kubectl -n kubernetes-dashboard create token dashboard-sa
-# kubectl proxy
-# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/
+# kubectl proxy --address='0.0.0.0' --port=8001
+# http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/.
+
+# ssh -L 8001:localhost:8001 root@192.168.0.101
+# ssh -f -L 8001:localhost:8001 root@192.168.0.101 -N

@@ -18,16 +18,6 @@
         dest: "/tmp/runc.{{ arch }}"
         mode: '0755'
 
-    # - name: Download sha256sum
-    #   get_url:
-    #     url: "{{ sha256sum_url }}"
-    #     dest: "/tmp/runc.sha256sum"
-
-    # - name: Verify sha256sum
-    #   command: sha256sum -c /tmp/runc.sha256sum
-    #   args:
-    #     chdir: /tmp
-
     - name: Install runc
       command: install -m 755 /tmp/runc.{{ arch }} /usr/local/sbin/runc
 

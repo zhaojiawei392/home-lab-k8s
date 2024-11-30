@@ -56,7 +56,7 @@ resource "proxmox_vm_qemu" "vm" {
   ciuser     = "root"
   cipassword = "kai"
   # sshkeys     = file("${path.module}/id_ed25519.pub")
-  sshkeys   = file("/root/.ssh/id_ed25519.pub")
+  sshkeys   = file("/home/kai/.ssh/id_ed25519.pub")
   ipconfig0 = "ip=192.168.0.${count.index + 101}/24,gw=192.168.0.1"
 
   disks {
@@ -75,11 +75,6 @@ resource "proxmox_vm_qemu" "vm" {
           storage = "local-lvm"
         }
       }
-      # ide2 {
-      #   cdrom {
-      #     iso = "local:iso/CentOS-Stream-9-latest-x86_64-dvd1.iso"
-      #   }
-      # }
     }
   }
 
@@ -95,41 +90,3 @@ resource "proxmox_vm_qemu" "vm" {
   }
 
 }
-
-
-
-# variable "vms" {
-#   type = list(object({
-#     name        = string
-#     cores       = number
-#     memory      = number
-#     ip_address  = string
-#   }))
-#   default = [
-#     {
-#       name        = "master1"
-#       cores       = 4
-#       memory      = 6144
-#       ip_address  = "192.168.0.101"
-#     },
-#     {
-#       name        = "worker1"
-#       cores       = 2
-#       memory      = 6144
-#       ip_address  = "192.168.0.102"
-#     },
-#     {
-#       name        = "worker2"
-#       cores       = 2
-#       memory      = 6144
-#       ip_address  = "192.168.0.103"
-#     },
-#     {
-#       name        = "worker3"
-#       cores       = 2
-#       memory      = 6144
-#       ip_address  = "192.168.0.104"
-#     }
-#   ]
-# }
-# for_each = { for vm in var.vms : vm.name => vm }

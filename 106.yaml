@@ -14,7 +14,7 @@
         mode: '0755'
 
     - name: Create default /etc/containerd/config.toml 
-      command: containerd config default > /etc/containerd/config.toml 
+      shell: containerd config default | tee /etc/containerd/config.toml 
 
     - name: Enable and start containerd
       systemd:

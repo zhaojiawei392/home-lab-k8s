@@ -1,0 +1,1228 @@
+2024-11-29 21:45:10,347 p=39247 u=kai n=ansible | [WARNING]: Unable to parse /home/kai/Projects/k8s/inventory as an inventory
+source
+
+2024-11-29 21:45:10,347 p=39247 u=kai n=ansible | [WARNING]: No inventory was parsed, only implicit localhost is available
+
+2024-11-29 21:45:10,350 p=39247 u=kai n=ansible | [WARNING]: provided hosts list is empty, only localhost is available. Note that
+the implicit localhost does not match 'all'
+
+2024-11-29 21:45:10,471 p=39247 u=kai n=ansible | PLAY [all] *********************************************************************
+2024-11-29 21:45:10,471 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,472 p=39247 u=kai n=ansible | PLAY [101] *********************************************************************
+2024-11-29 21:45:10,472 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,473 p=39247 u=kai n=ansible | PLAY [102] *********************************************************************
+2024-11-29 21:45:10,473 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,474 p=39247 u=kai n=ansible | PLAY [103] *********************************************************************
+2024-11-29 21:45:10,474 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,474 p=39247 u=kai n=ansible | PLAY [104] *********************************************************************
+2024-11-29 21:45:10,475 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,475 p=39247 u=kai n=ansible | PLAY [105] *********************************************************************
+2024-11-29 21:45:10,475 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,476 p=39247 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-11-29 21:45:10,476 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,477 p=39247 u=kai n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: master1
+
+2024-11-29 21:45:10,478 p=39247 u=kai n=ansible | PLAY [107] *********************************************************************
+2024-11-29 21:45:10,478 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,479 p=39247 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 21:45:10,479 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,479 p=39247 u=kai n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: workers
+
+2024-11-29 21:45:10,480 p=39247 u=kai n=ansible | PLAY [workers] *****************************************************************
+2024-11-29 21:45:10,480 p=39247 u=kai n=ansible | skipping: no hosts matched
+2024-11-29 21:45:10,480 p=39247 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 21:45:19,033 p=39255 u=kai n=ansible | PLAY [all] *********************************************************************
+2024-11-29 21:45:19,042 p=39255 u=kai n=ansible | TASK [Stop and disable firewalld] **********************************************
+2024-11-29 21:45:20,039 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:20,051 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:20,272 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:20,307 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:20,309 p=39255 u=kai n=ansible | TASK [Check if SELinux is enabled] *********************************************
+2024-11-29 21:45:20,670 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:45:20,677 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:45:20,682 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:45:20,849 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:45:20,851 p=39255 u=kai n=ansible | TASK [Temporarily set SELinux to permissive mode] ******************************
+2024-11-29 21:45:21,163 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:21,165 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:21,168 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:21,177 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:21,179 p=39255 u=kai n=ansible | TASK [Permanently disable SELinux in the config file] **************************
+2024-11-29 21:45:21,545 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:21,558 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:21,591 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:21,736 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:21,739 p=39255 u=kai n=ansible | TASK [Temporarily disable swap] ************************************************
+2024-11-29 21:45:22,114 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:22,280 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:22,519 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:22,519 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:22,523 p=39255 u=kai n=ansible | TASK [Permanently disable swap] ************************************************
+2024-11-29 21:45:22,862 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:22,866 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:22,897 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:22,915 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:22,917 p=39255 u=kai n=ansible | TASK [Create k8s.conf file in /etc/sysctl.d] ***********************************
+2024-11-29 21:45:23,625 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:23,626 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:23,631 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:23,794 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:23,796 p=39255 u=kai n=ansible | TASK [Apply sysctl settings] ***************************************************
+2024-11-29 21:45:24,111 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:24,115 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:24,118 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:24,291 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:24,293 p=39255 u=kai n=ansible | TASK [Load br_netfilter module] ************************************************
+2024-11-29 21:45:24,708 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:24,744 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:24,751 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:24,897 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:24,900 p=39255 u=kai n=ansible | TASK [Check if br_netfilter module is loaded] **********************************
+2024-11-29 21:45:25,235 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:25,239 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:25,240 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:25,405 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:25,407 p=39255 u=kai n=ansible | TASK [Display br_netfilter status] *********************************************
+2024-11-29 21:45:25,425 p=39255 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 21:45:25,434 p=39255 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 21:45:25,438 p=39255 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 21:45:25,446 p=39255 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 21:45:25,448 p=39255 u=kai n=ansible | TASK [Start chronyd service] ***************************************************
+2024-11-29 21:45:25,951 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:45:25,964 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:45:26,010 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:45:26,109 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:45:26,112 p=39255 u=kai n=ansible | TASK [Enable chronyd service to start on boot] *********************************
+2024-11-29 21:45:26,556 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:45:26,869 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:45:26,892 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:45:26,896 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:45:26,898 p=39255 u=kai n=ansible | TASK [Install ipset and ipvsadm] ***********************************************
+2024-11-29 21:45:32,918 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:43,161 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:44,195 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:45,112 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:45,114 p=39255 u=kai n=ansible | TASK [Ensure /etc/sysconfig/modules directory exists] **************************
+2024-11-29 21:45:45,469 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:45,474 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:45,681 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:45,688 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:45,689 p=39255 u=kai n=ansible | TASK [Create ipvs.modules file in /etc/sysconfig/modules/] *********************
+2024-11-29 21:45:46,264 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:46,268 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:46,275 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:46,275 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:46,278 p=39255 u=kai n=ansible | TASK [Ensure ipvs.modules file is executable] **********************************
+2024-11-29 21:45:46,580 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:46,588 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:46,776 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:46,780 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:46,781 p=39255 u=kai n=ansible | TASK [Load IPVS modules] *******************************************************
+2024-11-29 21:45:47,108 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:47,124 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:47,128 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:47,133 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:47,135 p=39255 u=kai n=ansible | TASK [Check if IPVS and nf_conntrack modules are loaded] ***********************
+2024-11-29 21:45:47,429 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:47,440 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:47,442 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:47,627 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:47,630 p=39255 u=kai n=ansible | TASK [Display IPVS modules status] *********************************************
+2024-11-29 21:45:47,659 p=39255 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 21:45:47,660 p=39255 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 21:45:47,664 p=39255 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 21:45:47,664 p=39255 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 21:45:47,666 p=39255 u=kai n=ansible | TASK [Ensure /etc/rc.d/rc.local is executable] *********************************
+2024-11-29 21:45:47,979 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:47,989 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:47,991 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:47,997 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:48,010 p=39255 u=kai n=ansible | PLAY [101] *********************************************************************
+2024-11-29 21:45:48,017 p=39255 u=kai n=ansible | TASK [Uninstall old kubelet, kubeadm, and kubectl] *****************************
+2024-11-29 21:45:48,738 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:45:48,750 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:45:48,940 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:45:48,959 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:45:48,960 p=39255 u=kai n=ansible | TASK [Add Kubernetes repository for YUM] ***************************************
+2024-11-29 21:45:49,520 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:45:49,526 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:45:49,550 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:45:49,551 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:45:49,552 p=39255 u=kai n=ansible | TASK [Update YUM cache] ********************************************************
+2024-11-29 21:45:51,859 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:45:52,478 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:45:52,513 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:45:53,121 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:45:53,124 p=39255 u=kai n=ansible | TASK [Install kubelet, kubeadm, and kubectl] ***********************************
+2024-11-29 21:46:12,448 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:16,069 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:20,854 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:21,007 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:21,008 p=39255 u=kai n=ansible | TASK [Install yum-plugin-versionlock] ******************************************
+2024-11-29 21:46:22,805 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:22,835 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:22,838 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:22,847 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:22,849 p=39255 u=kai n=ansible | TASK [Lock Kubernetes package versions] ****************************************
+2024-11-29 21:46:23,152 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:23,161 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:23,173 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:23,178 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:23,179 p=39255 u=kai n=ansible | TASK [Enable and start kubelet service] ****************************************
+2024-11-29 21:46:23,809 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:23,820 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:23,866 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:23,985 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:23,998 p=39255 u=kai n=ansible | PLAY [102] *********************************************************************
+2024-11-29 21:46:24,004 p=39255 u=kai n=ansible | TASK [Ensure tar is installed] *************************************************
+2024-11-29 21:46:25,890 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:25,918 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:26,034 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:28,810 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:28,811 p=39255 u=kai n=ansible | TASK [Download containerd archive] *********************************************
+2024-11-29 21:46:41,736 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:42,064 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:42,656 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:42,791 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:42,793 p=39255 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 21:46:43,894 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:44,238 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:44,240 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:44,243 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:44,246 p=39255 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 21:46:44,623 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:44,627 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:44,634 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:45,634 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:45,636 p=39255 u=kai n=ansible | TASK [Extract containerd archive] **********************************************
+2024-11-29 21:46:48,136 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:48,151 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:48,341 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:48,364 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:48,365 p=39255 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 21:46:48,674 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:48,681 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:48,688 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:48,689 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:48,698 p=39255 u=kai n=ansible | PLAY [103] *********************************************************************
+2024-11-29 21:46:48,704 p=39255 u=kai n=ansible | TASK [Fetch containerd service file content] ***********************************
+2024-11-29 21:46:49,451 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:49,454 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:49,462 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:49,463 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:49,466 p=39255 u=kai n=ansible | TASK [Ensure systemd service directory exists] *********************************
+2024-11-29 21:46:49,761 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:49,773 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:49,783 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:49,792 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:49,793 p=39255 u=kai n=ansible | TASK [Write containerd service file to system directory] ***********************
+2024-11-29 21:46:50,379 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:50,379 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:50,390 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:50,393 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:50,395 p=39255 u=kai n=ansible | TASK [Reload systemd daemon] ***************************************************
+2024-11-29 21:46:50,906 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:50,930 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:51,162 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:51,172 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:51,174 p=39255 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 21:46:51,808 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:51,855 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:52,079 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:52,081 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:52,093 p=39255 u=kai n=ansible | PLAY [104] *********************************************************************
+2024-11-29 21:46:52,098 p=39255 u=kai n=ansible | TASK [Download runc binary] ****************************************************
+2024-11-29 21:46:55,019 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:55,835 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:57,067 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:57,072 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:57,074 p=39255 u=kai n=ansible | TASK [Install runc] ************************************************************
+2024-11-29 21:46:57,371 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:46:57,374 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:46:57,571 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:46:57,582 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:46:57,584 p=39255 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 21:46:57,889 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:57,894 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:57,908 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:57,923 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:57,934 p=39255 u=kai n=ansible | PLAY [105] *********************************************************************
+2024-11-29 21:46:57,943 p=39255 u=kai n=ansible | TASK [Create directory for CNI plugins] ****************************************
+2024-11-29 21:46:58,269 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:46:58,270 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:46:58,276 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:46:58,283 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:46:58,285 p=39255 u=kai n=ansible | TASK [Download CNI plugins archive] ********************************************
+2024-11-29 21:47:06,142 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:17,077 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:17,211 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:17,485 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:17,488 p=39255 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 21:47:18,551 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:18,828 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:18,869 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:18,899 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:18,903 p=39255 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 21:47:19,332 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:19,337 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:19,346 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:20,324 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:20,327 p=39255 u=kai n=ansible | TASK [Extract CNI plugins archive] *********************************************
+2024-11-29 21:47:22,582 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:22,598 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:22,601 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:22,778 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:22,780 p=39255 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 21:47:23,080 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:47:23,084 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:47:23,099 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:47:23,122 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:47:23,134 p=39255 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-11-29 21:47:23,140 p=39255 u=kai n=ansible | TASK [Ensure /etc/containerd exists] *******************************************
+2024-11-29 21:47:23,444 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:23,450 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:23,469 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:23,638 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:23,640 p=39255 u=kai n=ansible | TASK [Create default /etc/containerd/config.toml] ******************************
+2024-11-29 21:47:23,949 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:23,985 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:23,985 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:23,986 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:23,988 p=39255 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 21:47:24,511 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:24,511 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:24,714 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:24,720 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:24,722 p=39255 u=kai n=ansible | TASK [Enable and start kubelet] ************************************************
+2024-11-29 21:47:25,175 p=39255 u=kai n=ansible | changed: [master1]
+2024-11-29 21:47:25,208 p=39255 u=kai n=ansible | changed: [worker2]
+2024-11-29 21:47:25,211 p=39255 u=kai n=ansible | changed: [worker1]
+2024-11-29 21:47:25,369 p=39255 u=kai n=ansible | changed: [worker3]
+2024-11-29 21:47:25,371 p=39255 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 21:47:25,838 p=39255 u=kai n=ansible | ok: [worker2]
+2024-11-29 21:47:25,846 p=39255 u=kai n=ansible | ok: [master1]
+2024-11-29 21:47:25,848 p=39255 u=kai n=ansible | ok: [worker1]
+2024-11-29 21:47:26,005 p=39255 u=kai n=ansible | ok: [worker3]
+2024-11-29 21:47:26,017 p=39255 u=kai n=ansible | PLAY [107] *********************************************************************
+2024-11-29 21:47:26,020 p=39255 u=kai n=ansible | TASK [Initialize Kubernetes cluster] *******************************************
+2024-11-29 21:47:26,285 p=39255 u=kai n=ansible | fatal: [master1]: FAILED! => changed=true 
+  cmd:
+  - kubeadm
+  - init
+  - --apiserver-advertise-address=192.168.1.3/24
+  - --pod-network-cidr=192.168.1.0/24
+  - --service-cidr=192.168.2.0/24
+  delta: '0:00:00.018720'
+  end: '2024-11-29 21:47:26.264577'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-29 21:47:26.245857'
+  stderr: |-
+    couldn't use "192.168.1.3/24" as "apiserver-advertise-address", must be ipv4 or ipv6 address
+    To see the stack trace of this error execute with --v=5 or higher
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-29 21:47:26,287 p=39255 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/main.retry
+
+2024-11-29 21:47:26,287 p=39255 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 21:47:26,288 p=39255 u=kai n=ansible | master1                    : ok=53   changed=38   unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-29 21:47:26,288 p=39255 u=kai n=ansible | worker1                    : ok=53   changed=38   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 21:47:26,288 p=39255 u=kai n=ansible | worker2                    : ok=53   changed=38   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 21:47:26,288 p=39255 u=kai n=ansible | worker3                    : ok=53   changed=38   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 21:49:30,220 p=41148 u=kai n=ansible | PLAY [107] *********************************************************************
+2024-11-29 21:49:30,226 p=41148 u=kai n=ansible | TASK [Initialize Kubernetes cluster] *******************************************
+2024-11-29 21:54:00,458 p=41148 u=kai n=ansible | fatal: [master1]: FAILED! => changed=true 
+  ansible_facts:
+    discovered_interpreter_python: /usr/bin/python3
+  cmd:
+  - kubeadm
+  - init
+  - --apiserver-advertise-address=192.168.1.100
+  - --pod-network-cidr=192.168.1.0/24
+  - --service-cidr=192.168.2.0/24
+  delta: '0:04:29.699000'
+  end: '2024-11-29 21:54:00.430135'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-29 21:49:30.731135'
+  stderr: |-
+    W1129 21:49:31.217191    8606 checks.go:846] detected that the sandbox image "" of the container runtime is inconsistent with that used by kubeadm.It is recommended to use "registry.k8s.io/pause:3.10" as the CRI sandbox image.
+    error execution phase wait-control-plane: could not initialize a Kubernetes cluster
+    To see the stack trace of this error execute with --v=5 or higher
+  stderr_lines: <omitted>
+  stdout: |-
+    [init] Using Kubernetes version: v1.31.3
+    [preflight] Running pre-flight checks
+    [preflight] Pulling images required for setting up a Kubernetes cluster
+    [preflight] This might take a minute or two, depending on the speed of your internet connection
+    [preflight] You can also perform this action beforehand using 'kubeadm config images pull'
+    [certs] Using certificateDir folder "/etc/kubernetes/pki"
+    [certs] Generating "ca" certificate and key
+    [certs] Generating "apiserver" certificate and key
+    [certs] apiserver serving cert is signed for DNS names [kubernetes kubernetes.default kubernetes.default.svc kubernetes.default.svc.cluster.local loc-k8s-node-0] and IPs [192.168.2.1 192.168.1.100]
+    [certs] Generating "apiserver-kubelet-client" certificate and key
+    [certs] Generating "front-proxy-ca" certificate and key
+    [certs] Generating "front-proxy-client" certificate and key
+    [certs] Generating "etcd/ca" certificate and key
+    [certs] Generating "etcd/server" certificate and key
+    [certs] etcd/server serving cert is signed for DNS names [loc-k8s-node-0 localhost] and IPs [192.168.1.100 127.0.0.1 ::1]
+    [certs] Generating "etcd/peer" certificate and key
+    [certs] etcd/peer serving cert is signed for DNS names [loc-k8s-node-0 localhost] and IPs [192.168.1.100 127.0.0.1 ::1]
+    [certs] Generating "etcd/healthcheck-client" certificate and key
+    [certs] Generating "apiserver-etcd-client" certificate and key
+    [certs] Generating "sa" key and public key
+    [kubeconfig] Using kubeconfig folder "/etc/kubernetes"
+    [kubeconfig] Writing "admin.conf" kubeconfig file
+    [kubeconfig] Writing "super-admin.conf" kubeconfig file
+    [kubeconfig] Writing "kubelet.conf" kubeconfig file
+    [kubeconfig] Writing "controller-manager.conf" kubeconfig file
+    [kubeconfig] Writing "scheduler.conf" kubeconfig file
+    [etcd] Creating static Pod manifest for local etcd in "/etc/kubernetes/manifests"
+    [control-plane] Using manifest folder "/etc/kubernetes/manifests"
+    [control-plane] Creating static Pod manifest for "kube-apiserver"
+    [control-plane] Creating static Pod manifest for "kube-controller-manager"
+    [control-plane] Creating static Pod manifest for "kube-scheduler"
+    [kubelet-start] Writing kubelet environment file with flags to file "/var/lib/kubelet/kubeadm-flags.env"
+    [kubelet-start] Writing kubelet configuration to file "/var/lib/kubelet/config.yaml"
+    [kubelet-start] Starting the kubelet
+    [wait-control-plane] Waiting for the kubelet to boot up the control plane as static Pods from directory "/etc/kubernetes/manifests"
+    [kubelet-check] Waiting for a healthy kubelet at http://127.0.0.1:10248/healthz. This can take up to 4m0s
+    [kubelet-check] The kubelet is healthy after 501.433394ms
+    [api-check] Waiting for a healthy API server. This can take up to 4m0s
+    [api-check] The API server is not healthy after 4m0.000273693s
+  
+    Unfortunately, an error has occurred:
+            context deadline exceeded
+  
+    This error is likely caused by:
+            - The kubelet is not running
+            - The kubelet is unhealthy due to a misconfiguration of the node in some way (required cgroups disabled)
+  
+    If you are on a systemd-powered system, you can try to troubleshoot the error with the following commands:
+            - 'systemctl status kubelet'
+            - 'journalctl -xeu kubelet'
+  
+    Additionally, a control plane component may have crashed or exited when started by the container runtime.
+    To troubleshoot, list all containers using your preferred container runtimes CLI.
+    Here is one example how you may list all running Kubernetes containers by using crictl:
+            - 'crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock ps -a | grep kube | grep -v pause'
+            Once you have found the failing container, you can inspect its logs with:
+            - 'crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock logs CONTAINERID'
+  stdout_lines: <omitted>
+2024-11-29 21:54:00,459 p=41148 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/107.retry
+
+2024-11-29 21:54:00,459 p=41148 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 21:54:00,459 p=41148 u=kai n=ansible | master1                    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-29 22:06:50,288 p=41309 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 22:06:50,294 p=41309 u=kai n=ansible | TASK [Set up kubeconfig for root] **********************************************
+2024-11-29 22:06:50,823 p=41309 u=kai n=ansible | changed: [master1]
+2024-11-29 22:06:50,825 p=41309 u=kai n=ansible | TASK [Get the join command for worker nodes] ***********************************
+2024-11-29 22:06:51,112 p=41309 u=kai n=ansible | ok: [master1]
+2024-11-29 22:06:51,114 p=41309 u=kai n=ansible | TASK [Set global fact for join command] ****************************************
+2024-11-29 22:06:51,128 p=41309 u=kai n=ansible | ok: [master1]
+2024-11-29 22:06:51,132 p=41309 u=kai n=ansible | PLAY [workers] *****************************************************************
+2024-11-29 22:06:51,135 p=41309 u=kai n=ansible | TASK [Gathering Facts] *********************************************************
+2024-11-29 22:06:52,367 p=41309 u=kai n=ansible | ok: [worker2]
+2024-11-29 22:06:52,394 p=41309 u=kai n=ansible | ok: [worker3]
+2024-11-29 22:06:52,406 p=41309 u=kai n=ansible | ok: [worker1]
+2024-11-29 22:06:52,420 p=41309 u=kai n=ansible | TASK [Join the Kubernetes cluster] *********************************************
+2024-11-29 22:06:53,525 p=41309 u=kai n=ansible | changed: [worker2]
+2024-11-29 22:06:53,536 p=41309 u=kai n=ansible | changed: [worker1]
+2024-11-29 22:06:54,033 p=41309 u=kai n=ansible | changed: [worker3]
+2024-11-29 22:06:54,057 p=41309 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 22:06:54,057 p=41309 u=kai n=ansible | master1                    : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 22:06:54,057 p=41309 u=kai n=ansible | worker1                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 22:06:54,057 p=41309 u=kai n=ansible | worker2                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 22:06:54,057 p=41309 u=kai n=ansible | worker3                    : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:07:48,722 p=43473 u=kai n=ansible | PLAY [all] *********************************************************************
+2024-11-29 23:07:48,732 p=43473 u=kai n=ansible | TASK [Stop and disable firewalld] **********************************************
+2024-11-29 23:07:49,811 p=43473 u=kai n=ansible | fatal: [worker2]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.0.103 port 22: Connection refused'
+  unreachable: true
+2024-11-29 23:07:49,812 p=43473 u=kai n=ansible | fatal: [worker3]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.0.104 port 22: Connection refused'
+  unreachable: true
+2024-11-29 23:07:50,833 p=43473 u=kai n=ansible | fatal: [master1]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.0.101 port 22: Connection refused'
+  unreachable: true
+2024-11-29 23:07:51,859 p=43473 u=kai n=ansible | fatal: [worker1]: UNREACHABLE! => changed=false 
+  msg: 'Failed to connect to the host via ssh: ssh: connect to host 192.168.0.102 port 22: Connection refused'
+  unreachable: true
+2024-11-29 23:07:51,860 p=43473 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/main.retry
+
+2024-11-29 23:07:51,860 p=43473 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:07:51,861 p=43473 u=kai n=ansible | master1                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:07:51,861 p=43473 u=kai n=ansible | worker1                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:07:51,861 p=43473 u=kai n=ansible | worker2                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:07:51,861 p=43473 u=kai n=ansible | worker3                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:08:21,213 p=43491 u=kai n=ansible | PLAY [all] *********************************************************************
+2024-11-29 23:08:21,222 p=43491 u=kai n=ansible | TASK [Stop and disable firewalld] **********************************************
+2024-11-29 23:08:22,318 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:22,334 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:22,575 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:22,589 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:22,591 p=43491 u=kai n=ansible | TASK [Check if SELinux is enabled] *********************************************
+2024-11-29 23:08:22,956 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:08:22,967 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:08:22,969 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:08:22,993 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:08:22,994 p=43491 u=kai n=ansible | TASK [Temporarily set SELinux to permissive mode] ******************************
+2024-11-29 23:08:23,317 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:23,320 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:23,320 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:23,499 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:23,501 p=43491 u=kai n=ansible | TASK [Permanently disable SELinux in the config file] **************************
+2024-11-29 23:08:23,870 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:23,882 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:23,893 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:23,912 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:23,915 p=43491 u=kai n=ansible | TASK [Temporarily disable swap] ************************************************
+2024-11-29 23:08:24,248 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:24,261 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:24,270 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:24,273 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:24,275 p=43491 u=kai n=ansible | TASK [Permanently disable swap] ************************************************
+2024-11-29 23:08:24,598 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:24,600 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:24,607 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:24,621 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:24,623 p=43491 u=kai n=ansible | TASK [Create k8s.conf file in /etc/sysctl.d] ***********************************
+2024-11-29 23:08:25,291 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:25,305 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:25,315 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:25,421 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:25,423 p=43491 u=kai n=ansible | TASK [Apply sysctl settings] ***************************************************
+2024-11-29 23:08:25,720 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:25,723 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:25,751 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:25,754 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:25,756 p=43491 u=kai n=ansible | TASK [Load br_netfilter module] ************************************************
+2024-11-29 23:08:26,158 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:26,161 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:26,163 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:26,176 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:26,178 p=43491 u=kai n=ansible | TASK [Check if br_netfilter module is loaded] **********************************
+2024-11-29 23:08:26,490 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:26,499 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:26,515 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:26,521 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:26,524 p=43491 u=kai n=ansible | TASK [Display br_netfilter status] *********************************************
+2024-11-29 23:08:26,549 p=43491 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:08:26,550 p=43491 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:08:26,553 p=43491 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:08:26,555 p=43491 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:08:26,557 p=43491 u=kai n=ansible | TASK [Start chronyd service] ***************************************************
+2024-11-29 23:08:26,964 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:08:26,982 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:08:27,193 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:08:27,201 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:08:27,203 p=43491 u=kai n=ansible | TASK [Enable chronyd service to start on boot] *********************************
+2024-11-29 23:08:27,671 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:08:27,683 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:08:27,686 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:08:27,843 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:08:27,845 p=43491 u=kai n=ansible | TASK [Install ipset and ipvsadm] ***********************************************
+2024-11-29 23:08:43,202 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:46,959 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:47,001 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:47,602 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:47,604 p=43491 u=kai n=ansible | TASK [Ensure /etc/sysconfig/modules directory exists] **************************
+2024-11-29 23:08:48,016 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:48,019 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:48,019 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:48,023 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:48,025 p=43491 u=kai n=ansible | TASK [Create ipvs.modules file in /etc/sysconfig/modules/] *********************
+2024-11-29 23:08:48,613 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:48,618 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:48,820 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:48,820 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:48,823 p=43491 u=kai n=ansible | TASK [Ensure ipvs.modules file is executable] **********************************
+2024-11-29 23:08:49,130 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:49,138 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:49,147 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:49,154 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:49,156 p=43491 u=kai n=ansible | TASK [Load IPVS modules] *******************************************************
+2024-11-29 23:08:49,496 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:49,508 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:49,508 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:49,514 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:49,516 p=43491 u=kai n=ansible | TASK [Check if IPVS and nf_conntrack modules are loaded] ***********************
+2024-11-29 23:08:49,825 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:49,833 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:49,848 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:49,850 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:49,852 p=43491 u=kai n=ansible | TASK [Display IPVS modules status] *********************************************
+2024-11-29 23:08:49,873 p=43491 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:08:49,873 p=43491 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:08:49,875 p=43491 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:08:49,880 p=43491 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:08:49,882 p=43491 u=kai n=ansible | TASK [Ensure /etc/rc.d/rc.local is executable] *********************************
+2024-11-29 23:08:50,166 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:50,176 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:50,396 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:50,399 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:50,412 p=43491 u=kai n=ansible | PLAY [101] *********************************************************************
+2024-11-29 23:08:50,418 p=43491 u=kai n=ansible | TASK [Uninstall old kubelet, kubeadm, and kubectl] *****************************
+2024-11-29 23:08:51,169 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:08:51,179 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:08:51,182 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:08:51,184 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:08:51,185 p=43491 u=kai n=ansible | TASK [Add Kubernetes repository for YUM] ***************************************
+2024-11-29 23:08:51,743 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:08:51,754 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:08:51,772 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:08:51,778 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:08:51,779 p=43491 u=kai n=ansible | TASK [Update YUM cache] ********************************************************
+2024-11-29 23:08:54,399 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:08:54,820 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:08:54,878 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:08:55,089 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:08:55,091 p=43491 u=kai n=ansible | TASK [Install kubelet, kubeadm, and kubectl] ***********************************
+2024-11-29 23:09:15,155 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:21,378 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:21,832 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:21,865 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:21,867 p=43491 u=kai n=ansible | TASK [Install yum-plugin-versionlock] ******************************************
+2024-11-29 23:09:23,358 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:23,522 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:23,539 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:23,565 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:23,567 p=43491 u=kai n=ansible | TASK [Lock Kubernetes package versions] ****************************************
+2024-11-29 23:09:23,854 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:23,883 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:23,884 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:23,893 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:23,895 p=43491 u=kai n=ansible | TASK [Enable and start kubelet service] ****************************************
+2024-11-29 23:09:24,539 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:24,549 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:24,561 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:24,691 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:24,701 p=43491 u=kai n=ansible | PLAY [102] *********************************************************************
+2024-11-29 23:09:24,708 p=43491 u=kai n=ansible | TASK [Ensure tar is installed] *************************************************
+2024-11-29 23:09:26,591 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:26,746 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:26,784 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:27,026 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:27,028 p=43491 u=kai n=ansible | TASK [Download containerd archive] *********************************************
+2024-11-29 23:09:36,079 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:36,468 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:40,827 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:40,888 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:40,890 p=43491 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 23:09:41,962 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:42,275 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:42,300 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:42,301 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:42,303 p=43491 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 23:09:42,670 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:42,675 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:42,898 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:42,898 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:42,899 p=43491 u=kai n=ansible | TASK [Extract containerd archive] **********************************************
+2024-11-29 23:09:45,469 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:45,477 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:45,493 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:45,574 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:45,576 p=43491 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:09:45,885 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:45,893 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:45,899 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:45,904 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:45,915 p=43491 u=kai n=ansible | PLAY [103] *********************************************************************
+2024-11-29 23:09:45,921 p=43491 u=kai n=ansible | TASK [Fetch containerd service file content] ***********************************
+2024-11-29 23:09:46,698 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:46,709 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:46,713 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:46,717 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:46,719 p=43491 u=kai n=ansible | TASK [Ensure systemd service directory exists] *********************************
+2024-11-29 23:09:47,021 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:47,045 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:47,047 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:47,048 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:47,050 p=43491 u=kai n=ansible | TASK [Write containerd service file to system directory] ***********************
+2024-11-29 23:09:47,610 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:47,613 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:47,624 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:47,850 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:47,852 p=43491 u=kai n=ansible | TASK [Reload systemd daemon] ***************************************************
+2024-11-29 23:09:48,401 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:48,449 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:48,479 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:48,480 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:48,482 p=43491 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:09:49,102 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:49,207 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:49,211 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:49,350 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:49,362 p=43491 u=kai n=ansible | PLAY [104] *********************************************************************
+2024-11-29 23:09:49,368 p=43491 u=kai n=ansible | TASK [Download runc binary] ****************************************************
+2024-11-29 23:09:53,818 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:54,318 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:54,593 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:54,728 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:54,731 p=43491 u=kai n=ansible | TASK [Install runc] ************************************************************
+2024-11-29 23:09:55,052 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:09:55,068 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:09:55,070 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:09:55,263 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:09:55,266 p=43491 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:09:55,585 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:55,598 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:55,598 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:55,617 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:55,631 p=43491 u=kai n=ansible | PLAY [105] *********************************************************************
+2024-11-29 23:09:55,639 p=43491 u=kai n=ansible | TASK [Create directory for CNI plugins] ****************************************
+2024-11-29 23:09:55,940 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:09:55,942 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:09:56,129 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:09:56,143 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:09:56,144 p=43491 u=kai n=ansible | TASK [Download CNI plugins archive] ********************************************
+2024-11-29 23:10:09,214 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:10,306 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:14,687 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:15,278 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:15,280 p=43491 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 23:10:16,399 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:16,400 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:16,401 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:16,401 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:16,403 p=43491 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 23:10:16,823 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:16,826 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:16,839 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:16,861 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:16,864 p=43491 u=kai n=ansible | TASK [Extract CNI plugins archive] *********************************************
+2024-11-29 23:10:19,146 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:19,161 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:19,178 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:19,375 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:19,376 p=43491 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:10:19,669 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:10:19,684 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:10:19,695 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:10:19,698 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:10:19,710 p=43491 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-11-29 23:10:19,716 p=43491 u=kai n=ansible | TASK [Ensure /etc/containerd exists] *******************************************
+2024-11-29 23:10:20,015 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:20,027 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:20,035 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:20,039 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:20,041 p=43491 u=kai n=ansible | TASK [Create default /etc/containerd/config.toml] ******************************
+2024-11-29 23:10:20,384 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:20,393 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:20,397 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:20,553 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:20,555 p=43491 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:10:21,067 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:21,099 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:21,103 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:21,293 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:21,295 p=43491 u=kai n=ansible | TASK [Enable and start kubelet] ************************************************
+2024-11-29 23:10:21,769 p=43491 u=kai n=ansible | changed: [master1]
+2024-11-29 23:10:21,797 p=43491 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:10:21,803 p=43491 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:10:21,804 p=43491 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:10:21,806 p=43491 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:10:22,227 p=43491 u=kai n=ansible | ok: [master1]
+2024-11-29 23:10:22,232 p=43491 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:10:22,275 p=43491 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:10:22,443 p=43491 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:10:22,458 p=43491 u=kai n=ansible | PLAY [107] *********************************************************************
+2024-11-29 23:10:22,461 p=43491 u=kai n=ansible | TASK [Initialize Kubernetes cluster] *******************************************
+2024-11-29 23:13:53,832 p=43491 u=kai n=ansible |  [ERROR]: User interrupted execution
+
+2024-11-29 23:15:39,551 p=45539 u=kai n=ansible | PLAY [all] *********************************************************************
+2024-11-29 23:15:39,559 p=45539 u=kai n=ansible | TASK [Stop and disable firewalld] **********************************************
+2024-11-29 23:15:40,670 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:40,700 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:40,869 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:40,889 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:40,893 p=45539 u=kai n=ansible | TASK [Check if SELinux is enabled] *********************************************
+2024-11-29 23:15:41,246 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:15:41,248 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:15:41,251 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:15:41,417 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:15:41,420 p=45539 u=kai n=ansible | TASK [Temporarily set SELinux to permissive mode] ******************************
+2024-11-29 23:15:41,721 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:41,744 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:41,748 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:41,884 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:41,885 p=45539 u=kai n=ansible | TASK [Permanently disable SELinux in the config file] **************************
+2024-11-29 23:15:42,253 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:42,255 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:42,424 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:42,433 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:42,435 p=45539 u=kai n=ansible | TASK [Temporarily disable swap] ************************************************
+2024-11-29 23:15:42,747 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:42,758 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:42,788 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:42,791 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:42,793 p=45539 u=kai n=ansible | TASK [Permanently disable swap] ************************************************
+2024-11-29 23:15:43,123 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:43,129 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:43,131 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:43,152 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:43,154 p=45539 u=kai n=ansible | TASK [Create k8s.conf file in /etc/sysctl.d] ***********************************
+2024-11-29 23:15:43,808 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:43,820 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:43,946 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:43,967 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:43,970 p=45539 u=kai n=ansible | TASK [Apply sysctl settings] ***************************************************
+2024-11-29 23:15:44,273 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:44,285 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:44,294 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:44,303 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:44,307 p=45539 u=kai n=ansible | TASK [Load br_netfilter module] ************************************************
+2024-11-29 23:15:44,720 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:44,722 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:44,725 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:44,730 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:44,733 p=45539 u=kai n=ansible | TASK [Check if br_netfilter module is loaded] **********************************
+2024-11-29 23:15:45,034 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:15:45,051 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:15:45,063 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:15:45,070 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:15:45,072 p=45539 u=kai n=ansible | TASK [Display br_netfilter status] *********************************************
+2024-11-29 23:15:45,093 p=45539 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:15:45,104 p=45539 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:15:45,105 p=45539 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:15:45,114 p=45539 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    br_netfilter           36864  0
+    bridge                417792  1 br_netfilter
+2024-11-29 23:15:45,116 p=45539 u=kai n=ansible | TASK [Start chronyd service] ***************************************************
+2024-11-29 23:15:45,530 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:15:45,546 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:15:45,750 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:15:45,754 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:15:45,759 p=45539 u=kai n=ansible | TASK [Enable chronyd service to start on boot] *********************************
+2024-11-29 23:15:46,239 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:15:46,283 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:15:46,311 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:15:46,329 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:15:46,336 p=45539 u=kai n=ansible | TASK [Install ipset and ipvsadm] ***********************************************
+2024-11-29 23:16:03,042 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:04,782 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:06,533 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:06,703 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:06,707 p=45539 u=kai n=ansible | TASK [Ensure /etc/sysconfig/modules directory exists] **************************
+2024-11-29 23:16:07,079 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:07,084 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:07,109 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:07,128 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:07,130 p=45539 u=kai n=ansible | TASK [Create ipvs.modules file in /etc/sysconfig/modules/] *********************
+2024-11-29 23:16:07,704 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:07,704 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:07,715 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:07,742 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:07,744 p=45539 u=kai n=ansible | TASK [Ensure ipvs.modules file is executable] **********************************
+2024-11-29 23:16:08,050 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:08,057 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:08,064 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:08,072 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:08,074 p=45539 u=kai n=ansible | TASK [Load IPVS modules] *******************************************************
+2024-11-29 23:16:08,408 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:08,417 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:08,428 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:08,434 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:08,436 p=45539 u=kai n=ansible | TASK [Check if IPVS and nf_conntrack modules are loaded] ***********************
+2024-11-29 23:16:08,746 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:08,757 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:08,760 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:08,761 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:08,765 p=45539 u=kai n=ansible | TASK [Display IPVS modules status] *********************************************
+2024-11-29 23:16:08,780 p=45539 u=kai n=ansible | ok: [master1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:16:08,789 p=45539 u=kai n=ansible | ok: [worker1] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:16:08,789 p=45539 u=kai n=ansible | ok: [worker2] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:16:08,797 p=45539 u=kai n=ansible | ok: [worker3] => 
+  msg: |-
+    ip_vs_sh               12288  0
+    ip_vs_wrr              12288  0
+    ip_vs_rr               12288  0
+    ip_vs                 237568  6 ip_vs_rr,ip_vs_sh,ip_vs_wrr
+    nf_conntrack          229376  3 nf_nat,nft_ct,ip_vs
+    nf_defrag_ipv6         24576  2 nf_conntrack,ip_vs
+    nf_defrag_ipv4         12288  1 nf_conntrack
+    libcrc32c              12288  5 nf_conntrack,nf_nat,nf_tables,xfs,ip_vs
+2024-11-29 23:16:08,799 p=45539 u=kai n=ansible | TASK [Ensure /etc/rc.d/rc.local is executable] *********************************
+2024-11-29 23:16:09,094 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:09,125 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:09,145 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:09,148 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:09,161 p=45539 u=kai n=ansible | PLAY [101] *********************************************************************
+2024-11-29 23:16:09,168 p=45539 u=kai n=ansible | TASK [Uninstall old kubelet, kubeadm, and kubectl] *****************************
+2024-11-29 23:16:09,901 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:16:09,909 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:16:09,916 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:16:10,088 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:16:10,090 p=45539 u=kai n=ansible | TASK [Add Kubernetes repository for YUM] ***************************************
+2024-11-29 23:16:10,655 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:10,676 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:10,690 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:10,691 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:10,693 p=45539 u=kai n=ansible | TASK [Update YUM cache] ********************************************************
+2024-11-29 23:16:13,840 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:16:13,945 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:16:13,959 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:16:15,205 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:16:15,207 p=45539 u=kai n=ansible | TASK [Install kubelet, kubeadm, and kubectl] ***********************************
+2024-11-29 23:16:40,499 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:41,547 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:41,818 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:41,865 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:41,869 p=45539 u=kai n=ansible | TASK [Install yum-plugin-versionlock] ******************************************
+2024-11-29 23:16:43,114 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:43,486 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:43,494 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:43,537 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:43,540 p=45539 u=kai n=ansible | TASK [Lock Kubernetes package versions] ****************************************
+2024-11-29 23:16:43,841 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:16:43,851 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:16:43,867 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:16:43,867 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:16:43,870 p=45539 u=kai n=ansible | TASK [Enable and start kubelet service] ****************************************
+2024-11-29 23:16:44,465 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:44,531 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:44,533 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:44,541 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:44,551 p=45539 u=kai n=ansible | PLAY [102] *********************************************************************
+2024-11-29 23:16:44,557 p=45539 u=kai n=ansible | TASK [Ensure tar is installed] *************************************************
+2024-11-29 23:16:46,265 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:46,297 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:46,653 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:16:46,670 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:16:46,672 p=45539 u=kai n=ansible | TASK [Download containerd archive] *********************************************
+2024-11-29 23:16:56,373 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:16:56,628 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:16:59,891 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:00,529 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:00,531 p=45539 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 23:17:01,413 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:01,413 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:01,420 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:01,421 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:01,422 p=45539 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 23:17:01,808 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:01,813 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:01,818 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:01,819 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:01,821 p=45539 u=kai n=ansible | TASK [Extract containerd archive] **********************************************
+2024-11-29 23:17:04,327 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:04,380 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:04,504 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:04,525 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:04,530 p=45539 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:17:04,848 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:04,856 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:04,875 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:04,891 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:04,905 p=45539 u=kai n=ansible | PLAY [103] *********************************************************************
+2024-11-29 23:17:04,912 p=45539 u=kai n=ansible | TASK [Fetch containerd service file content] ***********************************
+2024-11-29 23:17:05,696 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:05,696 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:05,696 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:05,696 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:05,699 p=45539 u=kai n=ansible | TASK [Ensure systemd service directory exists] *********************************
+2024-11-29 23:17:06,001 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:06,014 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:06,021 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:06,025 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:06,026 p=45539 u=kai n=ansible | TASK [Write containerd service file to system directory] ***********************
+2024-11-29 23:17:06,575 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:06,593 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:06,608 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:06,617 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:06,619 p=45539 u=kai n=ansible | TASK [Reload systemd daemon] ***************************************************
+2024-11-29 23:17:07,210 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:07,221 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:07,242 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:07,395 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:07,397 p=45539 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:17:08,099 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:08,103 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:08,105 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:08,274 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:08,285 p=45539 u=kai n=ansible | PLAY [104] *********************************************************************
+2024-11-29 23:17:08,290 p=45539 u=kai n=ansible | TASK [Download runc binary] ****************************************************
+2024-11-29 23:17:11,206 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:12,148 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:12,951 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:12,961 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:12,963 p=45539 u=kai n=ansible | TASK [Install runc] ************************************************************
+2024-11-29 23:17:13,279 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:13,289 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:13,292 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:13,298 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:13,300 p=45539 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:17:13,610 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:13,618 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:13,623 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:13,629 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:13,640 p=45539 u=kai n=ansible | PLAY [105] *********************************************************************
+2024-11-29 23:17:13,646 p=45539 u=kai n=ansible | TASK [Create directory for CNI plugins] ****************************************
+2024-11-29 23:17:13,950 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:13,976 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:14,152 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:14,159 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:14,160 p=45539 u=kai n=ansible | TASK [Download CNI plugins archive] ********************************************
+2024-11-29 23:17:27,889 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:30,098 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:33,175 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:33,653 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:33,655 p=45539 u=kai n=ansible | TASK [Download sha256sum] ******************************************************
+2024-11-29 23:17:34,537 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:34,537 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:34,541 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:35,037 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:35,038 p=45539 u=kai n=ansible | TASK [Verify sha256sum] ********************************************************
+2024-11-29 23:17:35,445 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:35,469 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:35,477 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:35,483 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:35,485 p=45539 u=kai n=ansible | TASK [Extract CNI plugins archive] *********************************************
+2024-11-29 23:17:37,764 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:37,769 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:37,903 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:37,934 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:37,937 p=45539 u=kai n=ansible | TASK [Cleanup temporary files] *************************************************
+2024-11-29 23:17:38,228 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:38,244 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:38,291 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:38,439 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:38,452 p=45539 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-11-29 23:17:38,457 p=45539 u=kai n=ansible | TASK [Ensure /etc/containerd exists] *******************************************
+2024-11-29 23:17:38,782 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:38,782 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:38,792 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:38,798 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:38,800 p=45539 u=kai n=ansible | TASK [Create default /etc/containerd/config.toml] ******************************
+2024-11-29 23:17:39,124 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:39,137 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:39,319 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:39,324 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:39,329 p=45539 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:17:39,868 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:39,872 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:39,885 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:40,043 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:40,046 p=45539 u=kai n=ansible | TASK [Enable and start kubelet] ************************************************
+2024-11-29 23:17:40,557 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:17:40,557 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:17:40,560 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:17:40,583 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:17:40,587 p=45539 u=kai n=ansible | TASK [Enable and start containerd] *********************************************
+2024-11-29 23:17:41,055 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:17:41,068 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:17:41,085 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:17:41,089 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:17:41,101 p=45539 u=kai n=ansible | PLAY [107] *********************************************************************
+2024-11-29 23:17:41,105 p=45539 u=kai n=ansible | TASK [Initialize Kubernetes cluster] *******************************************
+2024-11-29 23:18:15,583 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:18:15,587 p=45539 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 23:18:15,591 p=45539 u=kai n=ansible | TASK [Set up kubeconfig for root] **********************************************
+2024-11-29 23:18:15,850 p=45539 u=kai n=ansible | changed: [master1]
+2024-11-29 23:18:15,852 p=45539 u=kai n=ansible | TASK [Get the join command for worker nodes] ***********************************
+2024-11-29 23:18:16,154 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:18:16,156 p=45539 u=kai n=ansible | TASK [Set global fact for join command] ****************************************
+2024-11-29 23:18:16,170 p=45539 u=kai n=ansible | ok: [master1]
+2024-11-29 23:18:16,175 p=45539 u=kai n=ansible | PLAY [workers] *****************************************************************
+2024-11-29 23:18:16,177 p=45539 u=kai n=ansible | TASK [Gathering Facts] *********************************************************
+2024-11-29 23:18:16,981 p=45539 u=kai n=ansible | ok: [worker3]
+2024-11-29 23:18:16,990 p=45539 u=kai n=ansible | ok: [worker2]
+2024-11-29 23:18:16,991 p=45539 u=kai n=ansible | ok: [worker1]
+2024-11-29 23:18:17,004 p=45539 u=kai n=ansible | TASK [Join the Kubernetes cluster] *********************************************
+2024-11-29 23:18:23,108 p=45539 u=kai n=ansible | changed: [worker3]
+2024-11-29 23:18:23,601 p=45539 u=kai n=ansible | changed: [worker2]
+2024-11-29 23:18:23,610 p=45539 u=kai n=ansible | changed: [worker1]
+2024-11-29 23:18:23,634 p=45539 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:18:23,635 p=45539 u=kai n=ansible | master1                    : ok=57   changed=40   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:18:23,635 p=45539 u=kai n=ansible | worker1                    : ok=55   changed=39   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:18:23,635 p=45539 u=kai n=ansible | worker2                    : ok=55   changed=39   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:18:23,635 p=45539 u=kai n=ansible | worker3                    : ok=55   changed=39   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:18:45,945 p=47501 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 23:18:45,952 p=47501 u=kai n=ansible | TASK [Download and Apply the Calico YAML Manifest] *****************************
+2024-11-29 23:18:46,939 p=47501 u=kai n=ansible | fatal: [master1]: FAILED! => changed=true 
+  ansible_facts:
+    discovered_interpreter_python: /usr/bin/python3
+  cmd:
+  - kubectl
+  - apply
+  - -f
+  - https://docs.projectcalico.org/manifests/calico.yaml
+  delta: '0:00:00.620826'
+  end: '2024-11-29 23:18:46.901747'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-29 23:18:46.280921'
+  stderr: 'error: error validating "https://docs.projectcalico.org/manifests/calico.yaml": error validating data: failed to download openapi: Get "http://localhost:8080/openapi/v2?timeout=32s": dial tcp [::1]:8080: connect: connection refused; if you choose to ignore these errors, turn validation off with --validate=false'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-29 23:18:46,940 p=47501 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/109.retry
+
+2024-11-29 23:18:46,941 p=47501 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:18:46,941 p=47501 u=kai n=ansible | master1                    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:22:16,370 p=47725 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 23:22:16,377 p=47725 u=kai n=ansible | TASK [Download and Apply the Calico YAML Manifest] *****************************
+2024-11-29 23:22:17,611 p=47725 u=kai n=ansible | fatal: [master1]: FAILED! => changed=true 
+  ansible_facts:
+    discovered_interpreter_python: /usr/bin/python3
+  cmd: export KUBECONFIG=/etc/kubernetes/admin.conf | kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+  delta: '0:00:00.714299'
+  end: '2024-11-29 23:22:17.589211'
+  msg: non-zero return code
+  rc: 1
+  start: '2024-11-29 23:22:16.874912'
+  stderr: 'error: error validating "https://docs.projectcalico.org/manifests/calico.yaml": error validating data: failed to download openapi: Get "http://localhost:8080/openapi/v2?timeout=32s": dial tcp [::1]:8080: connect: connection refused; if you choose to ignore these errors, turn validation off with --validate=false'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2024-11-29 23:22:17,612 p=47725 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/109.retry
+
+2024-11-29 23:22:17,612 p=47725 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:22:17,612 p=47725 u=kai n=ansible | master1                    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:24:24,262 p=47827 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 23:24:24,268 p=47827 u=kai n=ansible | TASK [Download and Apply the Calico YAML Manifest] *****************************
+2024-11-29 23:24:26,118 p=47827 u=kai n=ansible | changed: [master1]
+2024-11-29 23:24:26,122 p=47827 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:24:26,122 p=47827 u=kai n=ansible | master1                    : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-11-29 23:25:45,429 p=47919 u=kai n=ansible | PLAY [108] *********************************************************************
+2024-11-29 23:25:45,436 p=47919 u=kai n=ansible | TASK [Download and Apply the Calico YAML Manifest] *****************************
+2024-11-29 23:25:47,304 p=47919 u=kai n=ansible | changed: [master1]
+2024-11-29 23:25:47,305 p=47919 u=kai n=ansible | TASK [Deploy dashboard] ********************************************************
+2024-11-29 23:25:48,349 p=47919 u=kai n=ansible | changed: [master1]
+2024-11-29 23:25:48,353 p=47919 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-11-29 23:25:48,353 p=47919 u=kai n=ansible | master1                    : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

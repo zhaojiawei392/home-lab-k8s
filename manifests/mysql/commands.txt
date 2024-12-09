@@ -1,0 +1,14 @@
+kubectl run --rm -it myshell --image=container-registry.oracle.com/mysql/community-operator -n innodbcluster -- mysqlsh root@mysql-innodb-cluster.innodbcluster --sql --password=kainos
+
+DROP DATABASE nextcloud;
+DROP USER 'nextcloud'@'%';
+
+CREATE DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+CREATE USER 'nextcloud'@'%' IDENTIFIED BY 'kainos';
+GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'%';
+FLUSH PRIVILEGES;
+
+externalDatabase.database=nextcloud
+externalDatabase.user=nextcloud
+externalDatabase.password=kainos
+externalDatabase.host=mysql-innodb-cluster.innodbcluster

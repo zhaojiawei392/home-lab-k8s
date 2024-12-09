@@ -1,0 +1,69 @@
+## Off
+
+
+image:
+  repository: nextcloud
+  tag: latest
+  pullPolicy: IfNotPresent
+
+ingress:
+  enabled: true
+  className: nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: selfsigned-issuer
+    nginx.ingress.kubernetes.io/proxy-body-size: "50G"
+    nginx.ingress.kubernetes.io/proxy-buffering: "off"
+    nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+    nginx.ingress.kubernetes.io/server-snippet: |-
+      client_max_body_size 50G;
+      client_body_buffer_size 512k;
+  tls:
+    - secretName: nextcloud-tls
+      hosts:
+        - nextcloud.example.com
+  hosts:
+    - host: nextcloud.example.com
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: nextcloud
+              port:
+                number: 80 
+
+persistence:
+  enabled: true
+  storageClass: "rook-ceph-block-no-replica"
+  size: 500Gi
+  accessMode: ReadWriteOnce
+  annotations:
+    helm.sh/resource-policy: keep
+  
+# Disable built-in database
+mariadb:
+  enabled: false
+
+# Configure external database
+externalDatabase:
+  enabled: true
+  type: mysql
+  host: "mysql-innodb-cluster.innodbcluster"
+  database: "nextcloud"
+  user: "nextcloud"
+  password: "kainos"
+
+# Initial admin user
+nextcloud:
+  host: nextcloud.example.com
+  username: admin
+  password: "kainos"
+
+resources:
+  requests:
+    cpu: 300m
+    memory: 512Mi
+  limits:
+    cpu: 2
+    memory: 2Gi 

@@ -1226,3 +1226,297 @@ the implicit localhost does not match 'all'
 2024-11-29 23:25:48,349 p=47919 u=kai n=ansible | changed: [master1]
 2024-11-29 23:25:48,353 p=47919 u=kai n=ansible | PLAY RECAP *********************************************************************
 2024-11-29 23:25:48,353 p=47919 u=kai n=ansible | master1                    : ok=2    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:46:28,855 p=14171 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 17:46:28,871 p=14171 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 17:46:31,618 p=14171 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:46:31,927 p=14171 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:46:32,100 p=14171 u=kai n=ansible | changed: [master1]
+2024-12-08 17:46:32,261 p=14171 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:46:32,264 p=14171 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 17:46:33,163 p=14171 u=kai n=ansible | changed: [master1]
+2024-12-08 17:46:33,290 p=14171 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:46:33,447 p=14171 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:46:33,496 p=14171 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:46:33,498 p=14171 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 17:46:34,082 p=14171 u=kai n=ansible | fatal: [master1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:46:34,084 p=14171 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:46:34,106 p=14171 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:46:34,113 p=14171 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | master1                    : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | worker1                    : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | worker2                    : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:46:34,114 p=14171 u=kai n=ansible | worker3                    : ok=2    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:50:16,210 p=14426 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 17:50:16,219 p=14426 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 17:50:17,674 p=14426 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:50:17,675 p=14426 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:50:17,675 p=14426 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:50:17,680 p=14426 u=kai n=ansible | ok: [master1]
+2024-12-08 17:50:17,682 p=14426 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 17:50:18,181 p=14426 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:50:18,183 p=14426 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:50:18,405 p=14426 u=kai n=ansible | ok: [master1]
+2024-12-08 17:50:18,405 p=14426 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:50:18,408 p=14426 u=kai n=ansible | TASK [Configure initiator name] ************************************************
+2024-12-08 17:50:18,739 p=14426 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:50:18,741 p=14426 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:50:18,743 p=14426 u=kai n=ansible | changed: [master1]
+2024-12-08 17:50:18,744 p=14426 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:50:18,747 p=14426 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 17:50:19,157 p=14426 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:50:19,169 p=14426 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:50:19,172 p=14426 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:50:19,172 p=14426 u=kai n=ansible | fatal: [master1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:50:19,173 p=14426 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 17:50:19,173 p=14426 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 17:50:19,174 p=14426 u=kai n=ansible | master1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:50:19,174 p=14426 u=kai n=ansible | worker1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:50:19,174 p=14426 u=kai n=ansible | worker2                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:50:19,174 p=14426 u=kai n=ansible | worker3                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:55:42,264 p=14707 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 17:55:42,274 p=14707 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 17:55:43,694 p=14707 u=kai n=ansible | ok: [master1]
+2024-12-08 17:55:43,716 p=14707 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:55:43,717 p=14707 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:55:43,723 p=14707 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:55:43,725 p=14707 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 17:55:44,241 p=14707 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:55:44,242 p=14707 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:55:44,242 p=14707 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:55:44,242 p=14707 u=kai n=ansible | ok: [master1]
+2024-12-08 17:55:44,244 p=14707 u=kai n=ansible | TASK [Configure initiator name] ************************************************
+2024-12-08 17:55:44,584 p=14707 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:55:44,585 p=14707 u=kai n=ansible | changed: [master1]
+2024-12-08 17:55:44,585 p=14707 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:55:44,587 p=14707 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:55:44,590 p=14707 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 17:55:44,996 p=14707 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:55:44,996 p=14707 u=kai n=ansible | ok: [master1]
+2024-12-08 17:55:44,998 p=14707 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:55:45,016 p=14707 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | master1                    : ok=4    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | worker1                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | worker2                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:55:45,020 p=14707 u=kai n=ansible | worker3                    : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:56:24,505 p=14898 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 17:56:24,514 p=14898 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 17:56:25,794 p=14898 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:56:25,815 p=14898 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:56:25,939 p=14898 u=kai n=ansible | ok: [master1]
+2024-12-08 17:56:25,945 p=14898 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:56:25,947 p=14898 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 17:56:26,445 p=14898 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:56:26,449 p=14898 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:56:26,485 p=14898 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:56:26,489 p=14898 u=kai n=ansible | ok: [master1]
+2024-12-08 17:56:26,491 p=14898 u=kai n=ansible | TASK [restart iscsid.service] **************************************************
+2024-12-08 17:56:26,901 p=14898 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:56:26,901 p=14898 u=kai n=ansible | changed: [master1]
+2024-12-08 17:56:26,919 p=14898 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:56:26,924 p=14898 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:56:26,925 p=14898 u=kai n=ansible | TASK [Configure initiator name] ************************************************
+2024-12-08 17:56:27,261 p=14898 u=kai n=ansible | changed: [worker2]
+2024-12-08 17:56:27,262 p=14898 u=kai n=ansible | changed: [master1]
+2024-12-08 17:56:27,263 p=14898 u=kai n=ansible | changed: [worker1]
+2024-12-08 17:56:27,264 p=14898 u=kai n=ansible | changed: [worker3]
+2024-12-08 17:56:27,266 p=14898 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 17:56:27,663 p=14898 u=kai n=ansible | ok: [master1]
+2024-12-08 17:56:27,678 p=14898 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:56:27,678 p=14898 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:56:27,891 p=14898 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 17:56:27,896 p=14898 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 17:56:27,896 p=14898 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 17:56:27,896 p=14898 u=kai n=ansible | master1                    : ok=5    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:56:27,896 p=14898 u=kai n=ansible | worker1                    : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:56:27,897 p=14898 u=kai n=ansible | worker2                    : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:56:27,897 p=14898 u=kai n=ansible | worker3                    : ok=4    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:57:24,505 p=15115 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 17:57:24,514 p=15115 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 17:57:25,809 p=15115 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:57:25,816 p=15115 u=kai n=ansible | ok: [master1]
+2024-12-08 17:57:25,816 p=15115 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:57:25,821 p=15115 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:57:25,822 p=15115 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 17:57:26,346 p=15115 u=kai n=ansible | ok: [master1]
+2024-12-08 17:57:26,346 p=15115 u=kai n=ansible | ok: [worker3]
+2024-12-08 17:57:26,347 p=15115 u=kai n=ansible | ok: [worker2]
+2024-12-08 17:57:26,371 p=15115 u=kai n=ansible | ok: [worker1]
+2024-12-08 17:57:26,372 p=15115 u=kai n=ansible | TASK [restart iscsid.socket] ***************************************************
+2024-12-08 17:57:26,781 p=15115 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsid.socket: Job failed. See "journalctl -xe" for details.
+2024-12-08 17:57:26,781 p=15115 u=kai n=ansible | fatal: [master1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsid.socket: Job failed. See "journalctl -xe" for details.
+2024-12-08 17:57:26,785 p=15115 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsid.socket: Job failed. See "journalctl -xe" for details.
+2024-12-08 17:57:26,793 p=15115 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsid.socket: Job failed. See "journalctl -xe" for details.
+2024-12-08 17:57:26,794 p=15115 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 17:57:26,794 p=15115 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 17:57:26,794 p=15115 u=kai n=ansible | master1                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:57:26,794 p=15115 u=kai n=ansible | worker1                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:57:26,794 p=15115 u=kai n=ansible | worker2                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 17:57:26,795 p=15115 u=kai n=ansible | worker3                    : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:00:10,865 p=15429 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 18:00:10,874 p=15429 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 18:00:12,333 p=15429 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:00:12,333 p=15429 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:00:12,525 p=15429 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:00:12,526 p=15429 u=kai n=ansible | ok: [master1]
+2024-12-08 18:00:12,528 p=15429 u=kai n=ansible | TASK [stop iscsid] *************************************************************
+2024-12-08 18:00:13,042 p=15429 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:00:13,042 p=15429 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:00:13,044 p=15429 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:00:13,044 p=15429 u=kai n=ansible | changed: [master1]
+2024-12-08 18:00:13,046 p=15429 u=kai n=ansible | TASK [stop iscsi] **************************************************************
+2024-12-08 18:00:13,444 p=15429 u=kai n=ansible | changed: [master1]
+2024-12-08 18:00:13,444 p=15429 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:00:13,450 p=15429 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:00:13,469 p=15429 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:00:13,471 p=15429 u=kai n=ansible | TASK [stop iscsid.socket] ******************************************************
+2024-12-08 18:00:13,862 p=15429 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:00:13,862 p=15429 u=kai n=ansible | ok: [master1]
+2024-12-08 18:00:13,863 p=15429 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:00:13,872 p=15429 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:00:13,874 p=15429 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 18:00:14,293 p=15429 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:00:14,293 p=15429 u=kai n=ansible | changed: [master1]
+2024-12-08 18:00:14,297 p=15429 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:00:14,308 p=15429 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:00:14,310 p=15429 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 18:00:14,712 p=15429 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:00:14,717 p=15429 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:00:14,740 p=15429 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:00:15,734 p=15429 u=kai n=ansible | fatal: [master1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:00:15,737 p=15429 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 18:00:15,738 p=15429 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 18:00:15,739 p=15429 u=kai n=ansible | master1                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:00:15,739 p=15429 u=kai n=ansible | worker1                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:00:15,739 p=15429 u=kai n=ansible | worker2                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:00:15,739 p=15429 u=kai n=ansible | worker3                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:01:27,161 p=15704 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 18:01:27,170 p=15704 u=kai n=ansible | TASK [Install iscsi-initiator-utils] *******************************************
+2024-12-08 18:01:28,618 p=15704 u=kai n=ansible | ok: [master1]
+2024-12-08 18:01:28,619 p=15704 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:01:28,621 p=15704 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:01:28,774 p=15704 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:01:28,779 p=15704 u=kai n=ansible | TASK [stop iscsid] *************************************************************
+2024-12-08 18:01:29,290 p=15704 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:01:29,294 p=15704 u=kai n=ansible | changed: [master1]
+2024-12-08 18:01:29,300 p=15704 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:01:29,305 p=15704 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:01:29,308 p=15704 u=kai n=ansible | TASK [stop iscsi] **************************************************************
+2024-12-08 18:01:29,707 p=15704 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:01:29,708 p=15704 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:01:29,708 p=15704 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:01:29,711 p=15704 u=kai n=ansible | changed: [master1]
+2024-12-08 18:01:29,712 p=15704 u=kai n=ansible | TASK [stop iscsid.socket] ******************************************************
+2024-12-08 18:01:30,114 p=15704 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:01:30,115 p=15704 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:01:30,115 p=15704 u=kai n=ansible | ok: [master1]
+2024-12-08 18:01:30,116 p=15704 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:01:30,118 p=15704 u=kai n=ansible | TASK [Enable and start iscsid] *************************************************
+2024-12-08 18:01:30,552 p=15704 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:01:30,553 p=15704 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:01:30,554 p=15704 u=kai n=ansible | changed: [master1]
+2024-12-08 18:01:30,562 p=15704 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:01:30,564 p=15704 u=kai n=ansible | TASK [Enable and start iscsi] **************************************************
+2024-12-08 18:01:30,979 p=15704 u=kai n=ansible | fatal: [worker1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:01:30,979 p=15704 u=kai n=ansible | fatal: [master1]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:01:30,980 p=15704 u=kai n=ansible | fatal: [worker2]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:01:31,001 p=15704 u=kai n=ansible | fatal: [worker3]: FAILED! => changed=false 
+  msg: |-
+    Unable to start service iscsi: A dependency job for iscsi.service failed. See 'journalctl -xe' for details.
+2024-12-08 18:01:31,002 p=15704 u=kai n=ansible | 	to retry, use: --limit @/home/kai/Projects/k8s/retries/110.retry
+
+2024-12-08 18:01:31,002 p=15704 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 18:01:31,003 p=15704 u=kai n=ansible | master1                    : ok=5    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:01:31,003 p=15704 u=kai n=ansible | worker1                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:01:31,003 p=15704 u=kai n=ansible | worker2                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:01:31,003 p=15704 u=kai n=ansible | worker3                    : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:30:52,868 p=17195 u=kai n=ansible | PLAY [106] *********************************************************************
+2024-12-08 18:30:52,876 p=17195 u=kai n=ansible | TASK [stop iscsid] *************************************************************
+2024-12-08 18:30:53,726 p=17195 u=kai n=ansible | changed: [master1]
+2024-12-08 18:30:53,737 p=17195 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:30:53,740 p=17195 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:30:53,944 p=17195 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:30:53,946 p=17195 u=kai n=ansible | TASK [stop iscsi] **************************************************************
+2024-12-08 18:30:54,346 p=17195 u=kai n=ansible | changed: [master1]
+2024-12-08 18:30:54,347 p=17195 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:30:54,357 p=17195 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:30:54,362 p=17195 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:30:54,364 p=17195 u=kai n=ansible | TASK [remove iscsi] ************************************************************
+2024-12-08 18:30:55,583 p=17195 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:30:55,744 p=17195 u=kai n=ansible | ok: [master1]
+2024-12-08 18:30:55,755 p=17195 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:30:55,766 p=17195 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:30:55,767 p=17195 u=kai n=ansible | TASK [remove iscsid] ***********************************************************
+2024-12-08 18:30:56,477 p=17195 u=kai n=ansible | ok: [master1]
+2024-12-08 18:30:56,485 p=17195 u=kai n=ansible | ok: [worker1]
+2024-12-08 18:30:56,500 p=17195 u=kai n=ansible | ok: [worker2]
+2024-12-08 18:30:56,510 p=17195 u=kai n=ansible | ok: [worker3]
+2024-12-08 18:30:56,512 p=17195 u=kai n=ansible | TASK [remove iscsi-initiator-utils] ********************************************
+2024-12-08 18:30:57,611 p=17195 u=kai n=ansible | changed: [master1]
+2024-12-08 18:30:57,612 p=17195 u=kai n=ansible | changed: [worker3]
+2024-12-08 18:30:57,616 p=17195 u=kai n=ansible | changed: [worker1]
+2024-12-08 18:30:57,629 p=17195 u=kai n=ansible | changed: [worker2]
+2024-12-08 18:30:57,638 p=17195 u=kai n=ansible | PLAY RECAP *********************************************************************
+2024-12-08 18:30:57,639 p=17195 u=kai n=ansible | master1                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:30:57,639 p=17195 u=kai n=ansible | worker1                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:30:57,639 p=17195 u=kai n=ansible | worker2                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2024-12-08 18:30:57,639 p=17195 u=kai n=ansible | worker3                    : ok=5    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

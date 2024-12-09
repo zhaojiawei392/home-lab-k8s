@@ -1,0 +1,28 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: mysql-innodb-cluster
+  namespace: innodbcluster
+spec:
+  secretName: mysql-innodb-cluster
+  tlsUseSelfSigned: true
+  instances: 1
+  router:
+    instances: 1
+  datadirVolumeClaimTemplate:
+    accessModes: ["ReadWriteOnce"]
+    resources:
+      requests:
+        storage: 20Gi
+
+#kubectl run --rm -it myshell --image=container-registry.oracle.com/mysql/community-operator -n innodbcluster -- mysqlsh root@mysql-innodb-cluster.innodbcluster --sql --password=kainos
+
+# CREATE DATABASE nextcloud;
+# CREATE USER 'nextcloud'@'%' IDENTIFIED BY 'choose-a-secure-password';
+# GRANT ALL PRIVILEGES ON nextcloud.* TO 'nextcloud'@'%';
+# FLUSH PRIVILEGES;
+
+# externalDatabase.database=nextcloud
+# externalDatabase.user=nextcloud
+# externalDatabase.password=choose-a-secure-password
+# externalDatabase.host=mysql-innodb-cluster.innodbcluster

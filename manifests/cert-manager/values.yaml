@@ -1,0 +1,20 @@
+crds:
+  enabled: true   # New recommended way instead of installCRDs
+
+startupapicheck:
+  enabled: true
+
+cainjector:
+  enabled: true  # Disable if you don't need automatic CA injection
+
+resources:
+  requests:
+    cpu: 5m
+    memory: 16Mi
+  limits:
+    cpu: 50m
+    memory: 50Mi
+
+webhook:
+  securePort: 10250
+

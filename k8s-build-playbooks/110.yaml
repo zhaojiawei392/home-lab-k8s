@@ -1,0 +1,34 @@
+---
+- name: "106"
+  hosts: all
+  remote_user: root
+  become: yes
+  gather_facts: no
+  vars_files:
+    - secrets.yaml
+  tasks:  
+    
+    - name: stop iscsid
+      systemd:
+        name: iscsid
+        state: stopped
+
+    - name: stop iscsi
+      systemd:
+        name: iscsi
+        state: stopped  
+
+    - name: remove iscsi
+      yum:
+        name: iscsi
+        state: absent
+
+    - name: remove iscsid
+      yum:
+        name: iscsid
+        state: absent
+
+    - name: remove iscsi-initiator-utils
+      yum:
+        name: iscsi-initiator-utils
+        state: absent
